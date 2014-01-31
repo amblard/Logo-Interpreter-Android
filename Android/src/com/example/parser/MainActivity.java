@@ -35,6 +35,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		userinput = (EditText) findViewById(R.id.editText1);
 		Log.d("","");
 		Log.d("","");
+		Log.d("","");
 		
 
 	}
