@@ -33,9 +33,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		boutonParser.setOnClickListener(this);
 
 		userinput = (EditText) findViewById(R.id.editText1);
-		Log.d("","");
-		Log.d("","");
-		Log.d("","");
+		
 		
 
 	}
