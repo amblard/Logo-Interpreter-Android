@@ -1,0 +1,13 @@
+---------- FICHIER DE DESCRIPTION DES BUGS -------------
+
+[01/02/14] par Vincent : 
+          Quand on entre des primitives après l'appel à une fonction custom, ces primitives ne sont pas executées
+          Exemple :
+          TO c
+          FD 50
+          END
+          RT 80
+          c
+          FD 50
+          
+          Le dernier FD 50 n'est pas executé car il est après l'appel de "c"
