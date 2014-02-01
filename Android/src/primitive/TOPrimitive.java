@@ -1,4 +1,4 @@
-package primitive;
+package primitive; 
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class TOPrimitive implements Primitive {
 
 	@Override
 	public void execute(Interpreter interp, Parser parser) {
-
+ 
 		String primitiveId = null;
 		// r�cuperation nom de la proc�dure custom
 		try {

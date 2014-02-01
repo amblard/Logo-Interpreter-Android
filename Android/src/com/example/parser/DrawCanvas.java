@@ -5,16 +5,19 @@ package com.example.parser;
 
 
 import primitive.NoSuchPrimitiveException;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
-/**
- * @author Traing
- *
- */
+
+@SuppressLint("WrongCall")
 public class DrawCanvas extends Activity {
 	
 	private RenderView renderView;
@@ -40,8 +43,15 @@ public class DrawCanvas extends Activity {
 			
 
 		} catch (NoSuchPrimitiveException e) {
+
 			
-			Log.d("PARSING", "Parsing NO !!!!");
+			TextView txview = new TextView(this.getBaseContext());
+			txview.setTextColor(Color.rgb(200,0,0));
+			txview.setTextSize(25);
+			txview.setText("Erreur : La primitive ["+e.getMessage()+ "] n'est pas valide.");
+			setContentView(txview);
+			Log.d("PARSING", "Error : "+e.getMessage()+ "is not a valid commande");
+			
 			
 		}
 

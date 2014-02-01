@@ -64,20 +64,11 @@ public class Interpreter {
 
 	public void execute(String text) throws NoSuchPrimitiveException {
 
-		// tester s'il s'agit d'une proc�dure
 
-		CustomPrimitive customPrim = primitives.getCustomPrimitive(text
-				.split(" ")[0]);
-
-		if (customPrim != null) {
-			customPrim.execute(this, null);
-			return;
-		}
-
-		// sinon c'est une primitive de base
+		// lecture du coe utilisateur
 		Parser parser = new Parser(new StringReader(text));
 		while (parser.getToken(1).kind != Parser.EOF) {
-			// Log.e("Parser", "NEW TOKEN");
+			Log.e("Parser", "NEW TOKEN");
 			try {
 				String primitiveId = (String) parser.primitive();
 
@@ -88,18 +79,31 @@ public class Interpreter {
 
 				Primitive prim = primitives.get(primitiveId);
 				if (prim == null) {
-					throw new NoSuchPrimitiveException(primitiveId);
+					
+					// si c'est pas une primitive classique
+					// on regarde si c'est une custom
+					CustomPrimitive customPrim = primitives.getCustomPrimitive(primitiveId);
+				
+					if (customPrim != null) {
+						
+						customPrim.execute(this, null);
+						return;
+					}					
+					else					
+						throw new NoSuchPrimitiveException(primitiveId);
 				}
-
-				prim.execute(this, parser);
+				else
+					prim.execute(this, parser);
 
 			} catch (ParseException e) {
+				Log.e("ERROR PARSING", e.getMessage());
 				e.printStackTrace();
 			}
 		}
 	}
 
 	public void createCustomPrimitive(String name, String list) {
+		Log.d("CREAT CUSTOM PRIM",name);
 		primitives.put(name, new CustomPrimitive(list));
 	}
 

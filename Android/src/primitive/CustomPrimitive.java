@@ -2,6 +2,8 @@ package primitive;
 
 import parser.Parser;
 
+import android.util.Log;
+
 import com.example.parser.Interpreter;
 
 public class CustomPrimitive implements Primitive {
@@ -15,6 +17,7 @@ public class CustomPrimitive implements Primitive {
 	@Override
 	public void execute(Interpreter interp, Parser parser)
 			throws NoSuchPrimitiveException {
+		Log.d("CUSTOM PRIMITIVE",commands);
 		interp.execute(commands);
 	}
 
