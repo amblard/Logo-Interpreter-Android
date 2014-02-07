@@ -4,6 +4,8 @@ package parser;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
+
 
 
 public class Parser implements ParserConstants {
@@ -29,6 +31,7 @@ public class Parser implements ParserConstants {
 		case 5:
 		case ID:
 		case NUMBER:
+			Log.d("NUMBER","NUMBER");
 			simple = simpleExp();
 			{
 				if (true)
@@ -118,12 +121,14 @@ public class Parser implements ParserConstants {
 			}
 			switch ((jj_ntk == -1) ? jj_ntk() : jj_ntk) {
 			case 9:
+				Log.d("NUMBER","+");
 				jj_consume_token(9);
 				rarg = multExp();
 				larg = String.valueOf(Integer.parseInt((String) larg)
 						+ Integer.parseInt((String) rarg));
 				break;
 			case 10:
+				Log.d("NUMBER","-");
 				jj_consume_token(10);
 				rarg = multExp();
 				larg = String.valueOf(Integer.parseInt((String) larg)
