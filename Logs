@@ -1,5 +1,9 @@
 Enregistrement de l'activité du projet :
 
+07/02/14 [Vincent - guillebaud@et.esiea.fr]
+          Ajout de 3 tests unitaires arithmetiques (chiffre simple, addition, soustraction
+
+
 15/01/14 [Vincent]: Création du git et ajout du code initial (Parser + graphismes de base)
 01/02/14 [Vincent]: Affichage d'un message d'erreur si la primitive entrée n'existe pas
 01/02/14 [Vincent]: Gestion des primitives customs (TO nom <liste d'instruction> END)
