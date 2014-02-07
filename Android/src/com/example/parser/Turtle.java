@@ -15,6 +15,7 @@ public class Turtle {
 
 	public Turtle(RenderView ui) {
 
+		if (ui != null){
 		// on récupère les dimentions de l'écran pour centrer la turtle
 		largeur = MainActivity.largeurEcran;
 		hauteur = MainActivity.hauteurEcran;
@@ -28,36 +29,36 @@ public class Turtle {
 		this.endY = hauteur / 2;
 		this.angle = 0.0;
 		this.ui = ui;
-
+		}
 	}
 
 	public void move(double distance, double sign) {
-		// Log.e("COORD TURTLE", "StartX:" + startX + "StartY:" + startY);
-		Log.e("ANGLE", "" + angle);
-		// Il faut convertir l'angle en radian pour l'utiliser dans Math.cos ou
-		// sin
-		endX += sign * (distance * Math.cos(Math.toRadians(angle)));
-		endY += sign * (distance * Math.sin(Math.toRadians(angle)));
+		
+		if(ui != null){
+		
+			// Il faut convertir l'angle en radian pour l'utiliser dans Math.cos ou
+			// sin
+			endX += sign * (distance * Math.cos(Math.toRadians(angle)));
+			endY += sign * (distance * Math.sin(Math.toRadians(angle)));
+	
 
-		Log.d("COORDONNEES", "startX=" + startX + "startY=" + startY + "endX:"
-				+ endX + "endY:" + endY);
-		this.ui.NewLine(this.startX, this.startY, this.endX, this.endY);
-
-		this.startX = endX;
-		this.startY = endY;
-		Log.e("COORD TURTLE", "StartX:" + startX + "StartY:" + startY);
-
+			this.ui.NewLine(this.startX, this.startY, this.endX, this.endY);
+	
+			this.startX = endX;
+			this.startY = endY;
+			
+		}
+		
 	}
 
 	public void turn(double angle, double sign) {
-		Log.e("ANGLE", "" + this.angle);
+		
 		this.angle = (this.angle + angle) * sign;
-		Log.e("ANGLE", "" + this.angle);
+		
 	}
 
 	public void forward(double distance) {
 
-		Log.d("testdistante", "distance=" + distance);
 
 		move(distance, 1.0);
 

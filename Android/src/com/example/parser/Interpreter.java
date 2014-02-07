@@ -25,8 +25,11 @@ public class Interpreter {
 
 	private PrimitiveDictionnary primitives;
 	private Turtle turtle;
+	public double returnValue;
 	public final String REPEAT_COMMAND = "REPEAT";
 
+	
+	
 	public Interpreter(RenderView ui) {
 
 		turtle = new Turtle(ui);
@@ -68,14 +71,13 @@ public class Interpreter {
 		// lecture du coe utilisateur
 		Parser parser = new Parser(new StringReader(text));
 		while (parser.getToken(1).kind != Parser.EOF) {
-			Log.e("Parser", "NEW TOKEN");
+		
 			try {
 				String primitiveId = (String) parser.primitive();
 
 				if (primitiveId == "") {
 					break;
 				}
-				Log.e("PRIMITIVE ID", primitiveId);
 
 				Primitive prim = primitives.get(primitiveId);
 				if (prim == null) {

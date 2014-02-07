@@ -7,17 +7,20 @@ import android.util.Log;
 import com.example.parser.Interpreter;
 
 public class FDPrimitive implements Primitive {
-
+	String value = null;
 	// private Turtle turtle;
 
+	public double getValue() {
+		return Double.parseDouble(value);
+	}
+	
 	@Override
 	public void execute(Interpreter interp, Parser parser) {
-		String value = null;
+		
 
 		try {
 			value = (String) parser.simpleExp();
-
-			Log.d("testvaleur", "value=" + value);
+			interp.returnValue = Double.parseDouble(value);
 
 			interp.getTurtle().forward(Double.parseDouble(value));
 
@@ -25,7 +28,6 @@ public class FDPrimitive implements Primitive {
 			e.printStackTrace();
 		}
 
-		Log.d("Primitive", "FD : la tortue avance de " + value);
 
 	}
 
