@@ -94,4 +94,41 @@ public class ArithmetiqueUnitTest {
 			fail(e.toString());
 		}			
 	}
+	
+	// test multiplication
+	@Test
+	public void test4() {
+		try {
+			interpreter.execute(fileReader("unitTest4.logo"));			
+			assertEquals(15, interpreter.returnValue,0);
+			
+		} catch (NoSuchPrimitiveException e){
+			fail(e.toString());
+		}			
+	}
+	
+	// test division (résultat entier)
+	@Test
+	public void test5() {
+		try {
+			interpreter.execute(fileReader("unitTest5.logo"));			
+			assertEquals(4, interpreter.returnValue,0);
+			
+		} catch (NoSuchPrimitiveException e){
+			fail(e.toString());
+		}			
+	}
+	
+	// test division (résultat a virgule)
+	@Test
+	public void test6() {
+		try {
+			interpreter.execute(fileReader("unitTest6.logo"));			
+			assertEquals(1.5, interpreter.returnValue,0);
+			
+		} catch (NoSuchPrimitiveException e){
+			fail(e.toString());
+		}			
+	}
+	
 }

@@ -166,14 +166,14 @@ public class Parser implements ParserConstants {
 			case 11:
 				jj_consume_token(11);
 				rarg = primaryExp();
-				larg = String.valueOf(Integer.parseInt((String) larg)
-						* Integer.parseInt((String) rarg));
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						* Double.parseDouble((String) rarg));
 				break;
 			case 12:
 				jj_consume_token(12);
 				rarg = primaryExp();
-				larg = String.valueOf(Integer.parseInt((String) larg)
-						/ Integer.parseInt((String) rarg));
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						/ Double.parseDouble((String) rarg));
 				break;
 			default:
 				jj_la1[5] = jj_gen;
