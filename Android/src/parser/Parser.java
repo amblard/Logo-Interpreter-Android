@@ -123,15 +123,15 @@ public class Parser implements ParserConstants {
 			case 9:
 				jj_consume_token(9);
 				rarg = multExp();
-				larg = String.valueOf(Integer.parseInt((String) larg)
-						+ Integer.parseInt((String) rarg));
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						+ Double.parseDouble((String) rarg));
 				break;
 			case 10:
 				
 				jj_consume_token(10);
 				rarg = multExp();
-				larg = String.valueOf(Integer.parseInt((String) larg)
-						- Integer.parseInt((String) rarg));
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						- Double.parseDouble((String) rarg));
 				break;
 			default:
 				jj_la1[3] = jj_gen;

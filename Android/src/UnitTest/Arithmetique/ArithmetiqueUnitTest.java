@@ -130,5 +130,25 @@ public class ArithmetiqueUnitTest {
 			fail(e.toString());
 		}			
 	}
+	@Test
+	public void test7() {
+		try {
+			interpreter.execute(fileReader("unitTest7.logo"));			
+			assertEquals(18, interpreter.returnValue,0);
+			
+		} catch (NoSuchPrimitiveException e){
+			fail(e.toString());
+		}			
+	}
+	@Test
+	public void test8() {
+		try {
+			interpreter.execute(fileReader("unitTest8.logo"));			
+			assertEquals(7, interpreter.returnValue,0);
+			
+		} catch (NoSuchPrimitiveException e){
+			fail(e.toString());
+		}			
+	}
 	
 }
