@@ -2,10 +2,20 @@ package UnitTest.Arithmetique;
 
 import static org.junit.Assert.*;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import primitive.NoSuchPrimitiveException;
+
+import android.content.Context;
 
 import com.example.parser.Interpreter;
 
@@ -14,10 +24,36 @@ public class ArithmetiqueUnitTest {
 	Interpreter interpreter;
 	public ArithmetiqueUnitTest() {
 	}
+	
+	private String fileReader(String fichier) {
+		
+				String chaine="";
+				try{
+					
+					String chemin =ArithmetiqueUnitTest.class.getResource(fichier).getPath();
+					InputStream ips=new FileInputStream(chemin); 
+					InputStreamReader ipsr=new InputStreamReader(ips);
+					BufferedReader br=new BufferedReader(ipsr);
+					String ligne;
+					while ((ligne=br.readLine())!=null){						
+						chaine+=ligne+"\n";
+				}
+					br.close(); 
+				}		
+
+
+
+				catch (Exception e){
+					System.out.println(e.toString());
+				}
+							
+		return chaine;
+	}
 
 	@Before
 	public void setUp() throws Exception {
 		interpreter = new Interpreter(null);
+		
 	}
 
 	@SuppressWarnings("deprecation")
@@ -26,7 +62,8 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test() {
 		try {
-			interpreter.execute("fd 5");			
+			
+			interpreter.execute(fileReader("unitTest1.logo"));			
 			assertEquals(5, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -38,8 +75,8 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test2() {
 		try {
-			interpreter.execute("fd 5+5");			
-			assertEquals(10, interpreter.returnValue,0);
+			interpreter.execute(fileReader("unitTest2.logo"));			
+			assertEquals(7, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
 			fail(e.toString());
@@ -50,8 +87,8 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test3() {
 		try {
-			interpreter.execute("fd 5-3");			
-			assertEquals(2, interpreter.returnValue,0);
+			interpreter.execute(fileReader("unitTest3.logo"));			
+			assertEquals(40, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
 			fail(e.toString());
