@@ -15,41 +15,17 @@ import org.junit.Test;
 
 import primitive.NoSuchPrimitiveException;
 
+import Openfile.Openfile;
 import android.content.Context;
 
 import com.example.parser.Interpreter;
 
-public class ArithmetiqueUnitTest {
+public class ArithmetiqueUnitTest extends Openfile {
 
 	Interpreter interpreter;
 	public ArithmetiqueUnitTest() {
 	}
 	
-	private String fileReader(String fichier) {
-		
-				String chaine="";
-				try{
-					
-					String chemin =ArithmetiqueUnitTest.class.getResource(fichier).getPath();
-					InputStream ips=new FileInputStream(chemin); 
-					InputStreamReader ipsr=new InputStreamReader(ips);
-					BufferedReader br=new BufferedReader(ipsr);
-					String ligne;
-					while ((ligne=br.readLine())!=null){						
-						chaine+=ligne+"\n";
-				}
-					br.close(); 
-				}		
-
-
-
-				catch (Exception e){
-					System.out.println(e.toString());
-				}
-							
-		return chaine;
-	}
-
 	@Before
 	public void setUp() throws Exception {
 		interpreter = new Interpreter(null);
@@ -63,7 +39,7 @@ public class ArithmetiqueUnitTest {
 	public void test() {
 		try {
 			
-			interpreter.execute(fileReader("unitTest1.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest1.logo").getPath()));			
 			assertEquals(5, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -75,7 +51,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test2() {
 		try {
-			interpreter.execute(fileReader("unitTest2.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest2.logo").getPath()));			
 			assertEquals(7, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -87,7 +63,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test3() {
 		try {
-			interpreter.execute(fileReader("unitTest3.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest3.logo").getPath()));			
 			assertEquals(40, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -99,7 +75,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test4() {
 		try {
-			interpreter.execute(fileReader("unitTest4.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest4.logo").getPath()));			
 			assertEquals(15, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -111,7 +87,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test5() {
 		try {
-			interpreter.execute(fileReader("unitTest5.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest5.logo").getPath()));			
 			assertEquals(4, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -123,7 +99,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test6() {
 		try {
-			interpreter.execute(fileReader("unitTest6.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest6.logo").getPath()));			
 			assertEquals(1.5, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -133,7 +109,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test7() {
 		try {
-			interpreter.execute(fileReader("unitTest7.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest7.logo").getPath()));			
 			assertEquals(18, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -143,7 +119,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test8() {
 		try {
-			interpreter.execute(fileReader("unitTest8.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest8.logo").getPath()));			
 			assertEquals(7, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
@@ -153,7 +129,7 @@ public class ArithmetiqueUnitTest {
 	@Test
 	public void test9() {
 		try {
-			interpreter.execute(fileReader("unitTest9.logo"));			
+			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest9.logo").getPath()));			
 			assertEquals(30, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
