@@ -12,6 +12,8 @@ public class LTPrimitive implements Primitive {
 		String value = null;
 		try {
 			value = (String) parser.simpleExp();
+			interp.returnValue = Double.parseDouble(value);
+			
 			interp.getTurtle().TurnLEFT(Double.parseDouble(value));
 		} catch (ParseException e) {
 			e.printStackTrace();

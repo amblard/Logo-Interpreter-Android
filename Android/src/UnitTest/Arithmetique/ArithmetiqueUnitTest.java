@@ -150,5 +150,16 @@ public class ArithmetiqueUnitTest {
 			fail(e.toString());
 		}			
 	}
+	@Test
+	public void test9() {
+		try {
+			interpreter.execute(fileReader("unitTest9.logo"));			
+			assertEquals(30, interpreter.returnValue,0);
+			
+		} catch (NoSuchPrimitiveException e){
+			fail(e.toString());
+		}			
+	}
+	
 	
 }
