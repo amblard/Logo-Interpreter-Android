@@ -13,6 +13,12 @@ public class Turtle {
 	private int largeur;
 	private int hauteur;
 
+	public double getX(){		
+		return startX;		
+	}
+	public double getY(){		
+		return startY;		
+	}
 	public Turtle(RenderView ui) {
 
 		if (ui != null){
@@ -33,21 +39,21 @@ public class Turtle {
 	}
 
 	public void move(double distance, double sign) {
+
 		
-		if(ui != null){
 		
 			// Il faut convertir l'angle en radian pour l'utiliser dans Math.cos ou
 			// sin
 			endX += sign * (distance * Math.cos(Math.toRadians(angle)));
 			endY += sign * (distance * Math.sin(Math.toRadians(angle)));
 	
-
-			this.ui.NewLine(this.startX, this.startY, this.endX, this.endY);
+			if(ui != null)
+				this.ui.NewLine(this.startX, this.startY, this.endX, this.endY);
 	
 			this.startX = endX;
 			this.startY = endY;
-			
-		}
+
+		
 		
 	}
 
@@ -58,7 +64,7 @@ public class Turtle {
 	}
 
 	public void forward(double distance) {
-
+		
 
 		move(distance, 1.0);
 
