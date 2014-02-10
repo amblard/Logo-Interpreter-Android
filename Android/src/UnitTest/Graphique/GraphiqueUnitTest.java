@@ -100,5 +100,17 @@ public class GraphiqueUnitTest {
 				fail(e.toString());
 			}			
 		}
+		
+		// test LT (rotation gauche) 90 puis FD 
+		@Test
+		public void test5() {
+			try {
+				interpreter.execute(fileReader("unitTest5.logo"));
+				assertEquals(0, interpreter.getTurtle().getX(),0.00000001); // valeur d'erreur != 0 car imprécision due au sin / cos
+				assertEquals(-100, interpreter.getTurtle().getY(),0.00000001);
+			} catch (NoSuchPrimitiveException e) {
+				fail(e.toString());
+			}			
+		}
 
 }
