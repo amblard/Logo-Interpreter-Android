@@ -31,7 +31,7 @@ public class Parser implements ParserConstants {
 		case 5:
 		case ID:
 		case NUMBER:
-			Log.d("NUMBER","NUMBER");
+			
 			simple = simpleExp();
 			{
 				if (true)

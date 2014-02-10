@@ -17,6 +17,7 @@ public class REPEATPrimitive implements Primitive {
 
 		try {
 			loopNb = Integer.parseInt((String) parser.simpleExp());
+	
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -36,7 +37,21 @@ public class REPEATPrimitive implements Primitive {
 		// Repeter x fois l'interpr�tation de la liste d'expression.
 		for (int i = 0; i < loopNb; i++) {
 			interp.execute(text);
+			
 		}
+		interp.returnValue=loopNb;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }
