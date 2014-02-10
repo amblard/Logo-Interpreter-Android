@@ -40,7 +40,7 @@ public class ArithmetiqueUnitTest extends Openfile {
 		try {
 			
 			interpreter.execute(fileReader(ArithmetiqueUnitTest.class.getResource("unitTest1.logo").getPath()));			
-			assertEquals(8, interpreter.returnValue,0);
+			assertEquals(5, interpreter.returnValue,0);
 			
 		} catch (NoSuchPrimitiveException e){
 			fail(e.toString());

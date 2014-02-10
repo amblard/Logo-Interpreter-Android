@@ -54,6 +54,7 @@ public class RepeatUnitTest extends Openfile{
 	@Test
 	public void test3(){
 	try {
+		System.out.println("START TEST 3");
 		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest3.logo").getPath()));
 		assertEquals(50,interpreter.getTurtle().getX(),0);
 			

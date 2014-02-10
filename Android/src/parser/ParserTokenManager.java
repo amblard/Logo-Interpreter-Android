@@ -225,6 +225,9 @@ public class ParserTokenManager implements ParserConstants {
 				return matchedToken;
 			}
 
+			if(curChar == ',')
+				continue EOFLoop;
+			
 			try {
 				input_stream.backup(0);
 				while (curChar <= 32 && (0x100002600L & (1L << curChar)) != 0L)
@@ -255,7 +258,7 @@ public class ParserTokenManager implements ParserConstants {
 			} catch (java.io.IOException e1) {
 				EOFSeen = true;
 				error_after = curPos <= 1 ? "" : input_stream.GetImage();
-				if (curChar == '\n' || curChar == '\r') {
+				if (curChar == '\n' || curChar == '\r' ) {
 					error_line++;
 					error_column = 0;
 				} else

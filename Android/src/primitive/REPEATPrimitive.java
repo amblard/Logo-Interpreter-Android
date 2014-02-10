@@ -25,15 +25,21 @@ public class REPEATPrimitive implements Primitive {
 		try {
 			// R�cuperer la liste d'expression.
 			List<Object> list = parser.listExp();
-
+			
+			System.out.println(list.toString());
+			
 			// Convertir tous les Object en String et les concat�ner.
-			for (Object obj : list) {
-				text += (String) obj + " ";
+			Object obj;
+			
+			for (int i = 0; i < list.size();i++) {
+				obj = list.get(i);
+				text += obj.toString() + " ";
+				System.out.println(obj.toString());
 			}
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-
+		System.out.println(text);
 		// Repeter x fois l'interpr�tation de la liste d'expression.
 		for (int i = 0; i < loopNb; i++) {
 			interp.execute(text);
