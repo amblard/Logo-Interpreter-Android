@@ -1,4 +1,4 @@
-package RepeatUnitTest;
+package UnitTest.Repeat;
 
 import static org.junit.Assert.*;
 
