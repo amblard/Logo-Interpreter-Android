@@ -25,7 +25,7 @@ public class RepeatUnitTest extends Openfile{
 
 	@Test
 	public void test() {
-	try {
+		try {
 		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest1").getPath()));
 		assertEquals(5,interpreter.returnValue,0);
 		assertEquals(20,interpreter.getTurtle().getX(),0);
@@ -33,6 +33,7 @@ public class RepeatUnitTest extends Openfile{
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	
 	}	
 	@Test
 	public void test1(){
@@ -43,48 +44,22 @@ public class RepeatUnitTest extends Openfile{
 	} catch (NoSuchPrimitiveException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-	}	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	}		
 		
 		
 	}
 	
+	@Test
+	public void test3(){
+	try {
+		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest3").getPath()));
+		assertEquals(50,interpreter.getTurtle().getX(),0);
+			
+	} catch (NoSuchPrimitiveException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
+	}
 
 }
