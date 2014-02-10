@@ -26,7 +26,7 @@ public class RepeatUnitTest extends Openfile{
 	@Test
 	public void test() {
 		try {
-		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest1").getPath()));
+		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest1.logo").getPath()));
 		assertEquals(5,interpreter.returnValue,0);
 		assertEquals(20,interpreter.getTurtle().getX(),0);
 	} catch (NoSuchPrimitiveException e) {
@@ -36,9 +36,9 @@ public class RepeatUnitTest extends Openfile{
 	
 	}	
 	@Test
-	public void test1(){
+	public void test2(){
 	try {
-		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest2").getPath()));
+		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest2.logo").getPath()));
 		assertEquals(4,interpreter.getTurtle().getX(),0.0000001);
 			
 	} catch (NoSuchPrimitiveException e) {
@@ -49,10 +49,12 @@ public class RepeatUnitTest extends Openfile{
 		
 	}
 	
+	
+	// test de repeat imbriqués
 	@Test
 	public void test3(){
 	try {
-		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest3").getPath()));
+		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest3.logo").getPath()));
 		assertEquals(50,interpreter.getTurtle().getX(),0);
 			
 	} catch (NoSuchPrimitiveException e) {

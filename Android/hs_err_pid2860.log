@@ -1,0 +1,243 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=2860, tid=3061107520
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_27-b27
+# Java VM: OpenJDK Server VM (20.0-b12 mixed mode linux-x86 )
+# Derivative: IcedTea6 1.12.6
+# Distribution: Ubuntu 12.04 LTS, package 6b27-1.12.6-1ubuntu0.12.04.4
+# If you would like to submit a bug report, please include
+# instructions how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-6/
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb6505c00):  JavaThread "Unknown thread" [_thread_in_vm, id=2866, stack(0xb66fc000,0xb674d000)]
+
+Stack: [0xb66fc000,0xb674d000]
+[error occurred during error reporting (printing stack bounds), id 0xb]
+
+
+[error occurred during error reporting (printing native stack), id 0xb]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0xb6505c00 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=2866, stack(0xb66fc000,0xb674d000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+08048000-08051000 r-xp 00000000 08:01 18351121   /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08051000-08052000 r--p 00008000 08:01 18351121   /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+08052000-08053000 rw-p 00009000 08:01 18351121   /usr/lib/jvm/java-6-openjdk-i386/jre/bin/java
+09eb5000-09ed6000 rw-p 00000000 00:00 0          [heap]
+8aa36000-8ab00000 r--s 011ad000 00:14 2371858    /home/vincent/android/sdk/platforms/android-18/android.jar
+8ab00000-8ab21000 rw-p 00000000 00:00 0 
+8ab21000-8ac00000 ---p 00000000 00:00 0 
+8ac7f000-8ac80000 ---p 00000000 00:00 0 
+8ac80000-8ad00000 rw-p 00000000 00:00 0          [stack:2871]
+8ad00000-8ad21000 rw-p 00000000 00:00 0 
+8ad21000-8ae00000 ---p 00000000 00:00 0 
+8ae00000-8ae21000 rw-p 00000000 00:00 0 
+8ae21000-8af00000 ---p 00000000 00:00 0 
+8af7f000-8af80000 ---p 00000000 00:00 0 
+8af80000-8b000000 rw-p 00000000 00:00 0          [stack:2870]
+8b000000-8b021000 rw-p 00000000 00:00 0 
+8b021000-8b100000 ---p 00000000 00:00 0 
+8b112000-8b113000 ---p 00000000 00:00 0 
+8b113000-8b193000 rw-p 00000000 00:00 0          [stack:2869]
+8b193000-8b194000 ---p 00000000 00:00 0 
+8b194000-8b21c000 rw-p 00000000 00:00 0          [stack:2868]
+8b21c000-8b254000 rw-p 00000000 00:00 0 
+8b254000-8b25f000 rw-p 00000000 00:00 0 
+8b25f000-8b2ff000 rw-p 00000000 00:00 0 
+8b2ff000-8b307000 rw-p 00000000 00:00 0 
+8b307000-8b33f000 rw-p 00000000 00:00 0 
+8b33f000-8b34a000 rw-p 00000000 00:00 0 
+8b34a000-8b3e9000 rw-p 00000000 00:00 0 
+8b3e9000-8b3ef000 rw-p 00000000 00:00 0 
+8b3ef000-8b43f000 rw-p 00000000 00:00 0 
+8b43f000-8c440000 rw-p 00000000 00:00 0 
+8c440000-93440000 rw-p 00000000 00:00 0 
+93440000-94930000 rw-p 00000000 00:00 0 
+94930000-a89a0000 rw-p 00000000 00:00 0 
+a89a0000-a9410000 rw-p 00000000 00:00 0 
+a9410000-b3440000 rw-p 00000000 00:00 0 
+b3440000-b3449000 rw-p 00000000 00:00 0 
+b3449000-b3500000 rw-p 00000000 00:00 0 
+b3500000-b3740000 rwxp 00000000 00:00 0 
+b3740000-b6565000 rw-p 00000000 00:00 0 
+b6565000-b6600000 ---p 00000000 00:00 0 
+b6679000-b6684000 r-xp 00000000 08:01 2756923    /lib/i386-linux-gnu/libnss_files-2.15.so
+b6684000-b6685000 r--p 0000a000 08:01 2756923    /lib/i386-linux-gnu/libnss_files-2.15.so
+b6685000-b6686000 rw-p 0000b000 08:01 2756923    /lib/i386-linux-gnu/libnss_files-2.15.so
+b6686000-b6690000 r-xp 00000000 08:01 2756922    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6690000-b6691000 r--p 00009000 08:01 2756922    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6691000-b6692000 rw-p 0000a000 08:01 2756922    /lib/i386-linux-gnu/libnss_nis-2.15.so
+b6692000-b66a8000 r-xp 00000000 08:01 2756909    /lib/i386-linux-gnu/libnsl-2.15.so
+b66a8000-b66a9000 r--p 00015000 08:01 2756909    /lib/i386-linux-gnu/libnsl-2.15.so
+b66a9000-b66aa000 rw-p 00016000 08:01 2756909    /lib/i386-linux-gnu/libnsl-2.15.so
+b66aa000-b66ac000 rw-p 00000000 00:00 0 
+b66ac000-b66b3000 r-xp 00000000 08:01 2756924    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b66b3000-b66b4000 r--p 00006000 08:01 2756924    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b66b4000-b66b5000 rw-p 00007000 08:01 2756924    /lib/i386-linux-gnu/libnss_compat-2.15.so
+b66b9000-b66c0000 r-xp 00000000 08:01 18351150   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b66c0000-b66c1000 r--p 00006000 08:01 18351150   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b66c1000-b66c2000 rw-p 00007000 08:01 18351150   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libzip.so
+b66c2000-b66ca000 rw-s 00000000 08:01 6160408    /tmp/hsperfdata_vincent/2860
+b66ca000-b66f0000 r-xp 00000000 08:01 18351140   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b66f0000-b66f1000 r--p 00025000 08:01 18351140   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b66f1000-b66f3000 rw-p 00026000 08:01 18351140   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libjava.so
+b66f3000-b66fa000 r-xp 00000000 08:01 2756917    /lib/i386-linux-gnu/librt-2.15.so
+b66fa000-b66fb000 r--p 00006000 08:01 2756917    /lib/i386-linux-gnu/librt-2.15.so
+b66fb000-b66fc000 rw-p 00007000 08:01 2756917    /lib/i386-linux-gnu/librt-2.15.so
+b66fc000-b66ff000 ---p 00000000 00:00 0 
+b66ff000-b674d000 rw-p 00000000 00:00 0          [stack:2866]
+b674d000-b6769000 r-xp 00000000 08:01 2753365    /lib/i386-linux-gnu/libgcc_s.so.1
+b6769000-b676a000 r--p 0001b000 08:01 2753365    /lib/i386-linux-gnu/libgcc_s.so.1
+b676a000-b676b000 rw-p 0001c000 08:01 2753365    /lib/i386-linux-gnu/libgcc_s.so.1
+b676b000-b6795000 r-xp 00000000 08:01 2756921    /lib/i386-linux-gnu/libm-2.15.so
+b6795000-b6796000 r--p 00029000 08:01 2756921    /lib/i386-linux-gnu/libm-2.15.so
+b6796000-b6797000 rw-p 0002a000 08:01 2756921    /lib/i386-linux-gnu/libm-2.15.so
+b6797000-b686f000 r-xp 00000000 08:01 14947298   /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b686f000-b6870000 ---p 000d8000 08:01 14947298   /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6870000-b6874000 r--p 000d8000 08:01 14947298   /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6874000-b6875000 rw-p 000dc000 08:01 14947298   /usr/lib/i386-linux-gnu/libstdc++.so.6.0.16
+b6875000-b687c000 rw-p 00000000 00:00 0 
+b687c000-b709c000 r-xp 00000000 08:01 18351133   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b709c000-b70e1000 r--p 0081f000 08:01 18351133   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b70e1000-b70f0000 rw-p 00864000 08:01 18351133   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server/libjvm.so
+b70f0000-b750c000 rw-p 00000000 00:00 0 
+b750c000-b7520000 r-xp 00000000 08:01 2753455    /lib/i386-linux-gnu/libz.so.1.2.3.4
+b7520000-b7521000 r--p 00013000 08:01 2753455    /lib/i386-linux-gnu/libz.so.1.2.3.4
+b7521000-b7522000 rw-p 00014000 08:01 2753455    /lib/i386-linux-gnu/libz.so.1.2.3.4
+b7522000-b76c6000 r-xp 00000000 08:01 2756926    /lib/i386-linux-gnu/libc-2.15.so
+b76c6000-b76c8000 r--p 001a4000 08:01 2756926    /lib/i386-linux-gnu/libc-2.15.so
+b76c8000-b76c9000 rw-p 001a6000 08:01 2756926    /lib/i386-linux-gnu/libc-2.15.so
+b76c9000-b76cc000 rw-p 00000000 00:00 0 
+b76cc000-b76cf000 r-xp 00000000 08:01 2756925    /lib/i386-linux-gnu/libdl-2.15.so
+b76cf000-b76d0000 r--p 00002000 08:01 2756925    /lib/i386-linux-gnu/libdl-2.15.so
+b76d0000-b76d1000 rw-p 00003000 08:01 2756925    /lib/i386-linux-gnu/libdl-2.15.so
+b76d1000-b76d5000 r-xp 00000000 08:01 18351149   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76d5000-b76d6000 r--p 00003000 08:01 18351149   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76d6000-b76d7000 rw-p 00004000 08:01 18351149   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/jli/libjli.so
+b76d7000-b76d8000 rw-p 00000000 00:00 0 
+b76d8000-b76ef000 r-xp 00000000 08:01 2756915    /lib/i386-linux-gnu/libpthread-2.15.so
+b76ef000-b76f0000 r--p 00016000 08:01 2756915    /lib/i386-linux-gnu/libpthread-2.15.so
+b76f0000-b76f1000 rw-p 00017000 08:01 2756915    /lib/i386-linux-gnu/libpthread-2.15.so
+b76f1000-b76f3000 rw-p 00000000 00:00 0 
+b76f8000-b76f9000 rw-p 00000000 00:00 0 
+b76f9000-b76fa000 r--p 00000000 00:00 0 
+b76fa000-b7705000 r-xp 00000000 08:01 18351165   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7705000-b7706000 ---p 0000b000 08:01 18351165   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7706000-b7707000 r--p 0000b000 08:01 18351165   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7707000-b7708000 rw-p 0000c000 08:01 18351165   /usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/libverify.so
+b7708000-b770a000 rw-p 00000000 00:00 0 
+b770a000-b770b000 r-xp 00000000 00:00 0          [vdso]
+b770b000-b772b000 r-xp 00000000 08:01 2756916    /lib/i386-linux-gnu/ld-2.15.so
+b772b000-b772c000 r--p 0001f000 08:01 2756916    /lib/i386-linux-gnu/ld-2.15.so
+b772c000-b772d000 rw-p 00020000 08:01 2756916    /lib/i386-linux-gnu/ld-2.15.so
+bfd4a000-bfd6b000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Xbootclasspath:/home/vincent/android/sdk/platforms/android-18/android.jar:/home/vincent/android/sdk/add-ons/addon-google_apis-google-18/libs/effects.jar:/home/vincent/android/sdk/add-ons/addon-google_apis-google-18/libs/usb.jar:/home/vincent/android/sdk/add-ons/addon-google_apis-google-18/libs/maps.jar 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 49550 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames UnitTest.Repeat.RepeatUnitTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/../lib/i386:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386/client:/usr/lib/jvm/java-6-openjdk-i386/jre/lib/i386:
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x66e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x66e740], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x530480], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x530310], sa_mask[0]=0x00000004, sa_flags=0x10000004
+SIGHUP: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGTERM: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGQUIT: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 12.04 (precise)
+uname:Linux 3.5.0-43-generic #66~precise1-Ubuntu SMP Thu Oct 24 14:55:08 UTC 2013 i686
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE 0k, NPROC 15865, NOFILE 4096, AS infinity
+load average:0.89 0.82 0.77
+
+/proc/meminfo:
+MemTotal:        2053256 kB
+MemFree:          127832 kB
+Buffers:           35312 kB
+Cached:           973548 kB
+SwapCached:            0 kB
+Active:           735052 kB
+Inactive:        1077216 kB
+Active(anon):     414748 kB
+Inactive(anon):   396576 kB
+Active(file):     320304 kB
+Inactive(file):   680640 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:       1171800 kB
+HighFree:          24180 kB
+LowTotal:         881456 kB
+LowFree:          103652 kB
+SwapTotal:       2083836 kB
+SwapFree:        2083684 kB
+Dirty:              1648 kB
+Writeback:             0 kB
+AnonPages:        803424 kB
+Mapped:           173896 kB
+Shmem:              7868 kB
+Slab:              78564 kB
+SReclaimable:      40892 kB
+SUnreclaim:        37672 kB
+KernelStack:        3984 kB
+PageTables:        11260 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3110464 kB
+Committed_AS:    3375084 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       14516 kB
+VmallocChunk:     107928 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       36856 kB
+DirectMap2M:      876544 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 54 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 2053256k(127832k free), swap 2083836k(2083684k free)
+
+vm_info: OpenJDK Server VM (20.0-b12) for linux-x86 JRE (1.6.0_27-b27), built on Nov 16 2013 15:21:31 by "buildd" with gcc 4.6.3
+
+time: Mon Feb 10 23:08:24 2014
+elapsed time: 0 seconds
+
