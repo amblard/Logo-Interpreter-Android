@@ -62,6 +62,18 @@ public class RepeatUnitTest extends Openfile{
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
+	}
+	// test de repeat imbriqués
+	@Test
+	public void test4(){
+	try {
+		interpreter.execute(fileReader(RepeatUnitTest.class.getResource("unitTest4.logo").getPath()));
+		assertEquals(25,interpreter.getTurtle().getX(),0.0000001);
+			
+	} catch (NoSuchPrimitiveException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	
 	}
 
