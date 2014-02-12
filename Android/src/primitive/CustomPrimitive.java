@@ -17,8 +17,7 @@ public class CustomPrimitive implements Primitive {
 	@Override
 	public void execute(Interpreter interp, Parser parser)
 			throws NoSuchPrimitiveException {
-		Log.d("CUSTOM PRIMITIVE",commands);
-		interp.execute(commands);
+			interp.execute(commands);
 	}
 
 }

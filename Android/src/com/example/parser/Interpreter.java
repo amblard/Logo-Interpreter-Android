@@ -105,7 +105,6 @@ public class Interpreter {
 	}
 
 	public void createCustomPrimitive(String name, String list) {
-		Log.d("CREAT CUSTOM PRIM",name);
 		primitives.put(name, new CustomPrimitive(list));
 	}
 
