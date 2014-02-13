@@ -1,6 +1,17 @@
 ---------- FICHIER DE DESCRIPTION DES BUGS -------------
 
-[01/02/14] par Vincent : 
+
+--------------
+BUGS CONNUS :
+--------------
+
+
+--------------
+RESOLUS :
+--------------
+
+
+RESOLU [13/02/14] : 
           Quand on entre des primitives après l'appel à une fonction custom, ces primitives ne sont pas executées
           Exemple :
           TO c
@@ -11,3 +22,5 @@
           FD 50
           
           Le dernier FD 50 n'est pas executé car il est après l'appel de "c"
+
+RESOLU [11/02/14] : Les repeats imbriqués ne fonctionnent pas l'application plante (Repeat 4 [ REPEAT 4 [FD 5]]
