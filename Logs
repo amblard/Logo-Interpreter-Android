@@ -1,5 +1,14 @@
 Enregistrement de l'activité du projet :
 
+13/03/14 [Vincent - guillebaud@et.esiea.fr]
+          Résolution de bug sur les primitives appelées après l'execution d'une primitive custom.
+
+12/03/14 [Vincent - guillebaud@et.esiea.fr]
+          Ajout de tests sur les fonctions "customs"
+
+11/03/14 [Vincent - guillebaud@et.esiea.fr]
+          Résolution de bug sur les repeats imbriqués
+
 07/02/14 [Vincent - guillebaud@et.esiea.fr]
           Ajout de 3 tests unitaires arithmetiques (chiffre simple, addition, soustraction
 
