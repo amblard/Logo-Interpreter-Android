@@ -46,10 +46,15 @@ public class Turtle {
 			// sin
 			endX += sign * (distance * Math.cos(Math.toRadians(angle)));
 			endY += sign * (distance * Math.sin(Math.toRadians(angle)));
-	
-			if(ui != null)
+			
+
+			if(ui != null){
 				this.ui.NewLine(this.startX, this.startY, this.endX, this.endY);
-	
+				System.out.println("UI  "+distance);
+
+			}
+			
+				
 			this.startX = endX;
 			this.startY = endY;
 
@@ -64,7 +69,7 @@ public class Turtle {
 	}
 
 	public void forward(double distance) {
-		
+		System.out.println("TORTUE AVANCE !!"+distance);
 
 		move(distance, 1.0);
 

@@ -34,5 +34,30 @@ public class FonctionsUnitTest extends Openfile{
 			e.printStackTrace();
 		}
 	}
-
+	
+	// test de fonction avec un repeat
+	@Test
+	public void test2() {
+		try {
+			interpreter.execute(fileReader(FonctionsUnitTest.class.getResource("unitTest2.logo").getPath()));
+			assertEquals(0,interpreter.getTurtle().getX(),0.00000001);
+			assertEquals(0,interpreter.getTurtle().getY(),0.00000001);
+		} catch (NoSuchPrimitiveException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	// test de fonction avec primitive après la fonction
+		@Test
+		public void test3() {
+			try {
+				interpreter.execute(fileReader(FonctionsUnitTest.class.getResource("unitTest3.logo").getPath()));
+				assertEquals(100,interpreter.getTurtle().getX(),0.00000001);
+				assertEquals(0,interpreter.getTurtle().getY(),0.00000001);
+			} catch (NoSuchPrimitiveException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 }

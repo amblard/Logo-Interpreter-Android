@@ -78,6 +78,7 @@ public class Interpreter {
 				if (primitiveId == "") {
 					break;
 				}
+				
 
 				Primitive prim = primitives.get(primitiveId);
 				if (prim == null) {
@@ -87,9 +88,9 @@ public class Interpreter {
 					CustomPrimitive customPrim = primitives.getCustomPrimitive(primitiveId);
 				
 					if (customPrim != null) {
-						
-						customPrim.execute(this, null);
-						return;
+						//System.out.println(parser.toString());
+						customPrim.execute(this, parser);
+						//return;
 					}					
 					else					
 						throw new NoSuchPrimitiveException(primitiveId);
