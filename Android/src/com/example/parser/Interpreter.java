@@ -11,6 +11,7 @@ import primitive.CustomPrimitive;
 import primitive.FDPrimitive;
 import primitive.HOMEPrimitive;
 import primitive.LTPrimitive;
+import primitive.MAKEPrimitive;
 import primitive.NoSuchPrimitiveException;
 import primitive.PDPrimitive;
 import primitive.PUPrimitive;
@@ -63,6 +64,7 @@ public class Interpreter {
 		primitives.put("RT", new RTPrimitive());
 		primitives.put("RIGHT", new RTPrimitive());
 		primitives.put("TO", new TOPrimitive());
+		primitives.put("MAKE", new MAKEPrimitive());
 	}
 
 	public void execute(String text) throws NoSuchPrimitiveException {

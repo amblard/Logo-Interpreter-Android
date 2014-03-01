@@ -38,7 +38,7 @@ public class DrawCanvas extends Activity {
 
 			
 			renderView.setBackgroundColor(Color.WHITE);
-			
+		
 			setContentView(renderView);
 			
 

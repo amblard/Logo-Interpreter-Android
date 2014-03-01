@@ -1,4 +1,4 @@
-package UnitTest.Repeat;
+package UnitTest.repeat;
 
 import static org.junit.Assert.*;
 
@@ -22,7 +22,7 @@ public class RepeatUnitTest extends Openfile{
 	public void setUp() throws Exception {
 		interpreter=new Interpreter(null);
 	}
-
+	// Test repeat avec commande
 	@Test
 	public void test() {
 		try {
@@ -34,7 +34,9 @@ public class RepeatUnitTest extends Openfile{
 		e.printStackTrace();
 	}
 	
-	}	
+	}
+	
+	// Test repeat avec deux commande
 	@Test
 	public void test2(){
 	try {

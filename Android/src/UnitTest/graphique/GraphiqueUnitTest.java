@@ -1,4 +1,4 @@
-package UnitTest.Graphique;
+package UnitTest.graphique;
 
 import static org.junit.Assert.*;
 
@@ -14,7 +14,7 @@ import primitive.NoSuchPrimitiveException;
 
 import com.example.parser.Interpreter;
 
-import UnitTest.Arithmetique.ArithmetiqueUnitTest;
+import UnitTest.arithmetique.ArithmetiqueUnitTest;
 
 public class GraphiqueUnitTest {
 

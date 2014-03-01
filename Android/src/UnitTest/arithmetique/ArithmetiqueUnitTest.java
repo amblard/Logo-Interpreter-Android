@@ -1,4 +1,4 @@
-package UnitTest.Arithmetique;
+package UnitTest.arithmetique;
 
 import static org.junit.Assert.*;
 
@@ -106,6 +106,8 @@ public class ArithmetiqueUnitTest extends Openfile {
 			fail(e.toString());
 		}			
 	}
+	
+	//test priorite multiplication
 	@Test
 	public void test7() {
 		try {
@@ -116,6 +118,8 @@ public class ArithmetiqueUnitTest extends Openfile {
 			fail(e.toString());
 		}			
 	}
+	
+	// test priorite division
 	@Test
 	public void test8() {
 		try {
@@ -126,6 +130,8 @@ public class ArithmetiqueUnitTest extends Openfile {
 			fail(e.toString());
 		}			
 	}
+	
+	// test priotite parenthese
 	@Test
 	public void test9() {
 		try {
