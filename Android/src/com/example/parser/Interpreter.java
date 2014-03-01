@@ -1,6 +1,8 @@
 package com.example.parser;
 
 import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
 
 import parser.ParseException;
 import parser.Parser;
@@ -28,6 +30,8 @@ public class Interpreter {
 	private Turtle turtle;
 	public double returnValue;
 	public final String REPEAT_COMMAND = "REPEAT";
+	private List<Variable> Variables;
+	private Variable variable;
 
 	
 	
@@ -36,8 +40,11 @@ public class Interpreter {
 		turtle = new Turtle(ui);
 
 		primitives = new PrimitiveDictionnary();
-
+		
 		initializePrimitives();
+		
+		Variables = new ArrayList<Variable>();
+
 	}
 
 	public Turtle getTurtle() {
@@ -110,5 +117,16 @@ public class Interpreter {
 	public void createCustomPrimitive(String name, String list) {
 		primitives.put(name, new CustomPrimitive(list));
 	}
+	
+	
+	public void ListVariable(String nom, Double valeur){
+		
+		variable=new Variable();
+		variable.name=nom;
+		variable.value=valeur;
+		Variables.add(variable);
+		
+	}
+	
 
 }
