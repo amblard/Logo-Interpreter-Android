@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import parser.ParseException;
 import parser.Parser;
-
+import android.util.Log;
 
 import com.example.parser.Interpreter;
 import com.example.parser.Variable;

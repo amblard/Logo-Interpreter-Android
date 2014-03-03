@@ -4,8 +4,6 @@ package parser;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.util.Log;
-
 
 
 public class Parser implements ParserConstants {
