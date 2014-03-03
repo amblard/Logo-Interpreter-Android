@@ -5,9 +5,9 @@ import java.util.regex.Pattern;
 
 import parser.ParseException;
 import parser.Parser;
-
-import com.example.parser.Interpreter;
 import com.example.parser.Variable;
+import com.example.parser.Interpreter;
+
 
 public class RTPrimitive implements Primitive {
 	String value = null;

@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 public class Openfile {
 
-	public String fileReader(String chemin) {
+	public static String fileReader(String chemin) {
 		
 		String chaine="";
 		try{
