@@ -7,8 +7,8 @@ import com.example.parser.Interpreter;
 
 public class MAKEPrimitive implements Primitive{
 	
-	String primitiveId = null;
-	String value = null;
+	String primitiveId;
+	String value;
 	
 	public double getValue() {
 		return Double.parseDouble(value);
@@ -16,6 +16,8 @@ public class MAKEPrimitive implements Primitive{
 	
 	@Override
 	public void execute(Interpreter interp, Parser parser) {
+		
+		// recuperation du nom et de la valeur
 		try {
 			primitiveId = (String) parser.primitive();
 			value = (String) parser.simpleExp();

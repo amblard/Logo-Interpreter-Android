@@ -21,7 +21,77 @@ public class Parser implements ParserConstants {
 		}
 		throw new Error("Missing return statement in function");
 	}
+	// expression -> General "+", "-", "/", "*", ":", "simpleExp", "(simpleExp)"
+	final public Object generalExp() throws ParseException {
+		Object larg = null;
+		Object rarg;
+		Object obj;
+		larg = multExp();
+		label_2: while (true) {
+			switch ((jj_ntk == -1) ? jj_ntk() : jj_ntk) {
+			case 9: //+
+			case 10: //-
+			case 11: //*
+			case 12: // /	
+			case 13: //:
+				;
+				break;
+			default:
+				jj_la1[2] = jj_gen;
+				break label_2;
+			}
+			switch ((jj_ntk == -1) ? jj_ntk() : jj_ntk) {
+			case 9:
+				jj_consume_token(9);
+				rarg = multExp();
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						+ Double.parseDouble((String) rarg));
+				break;
+			case 10:
+				
+				jj_consume_token(10);
+				rarg = multExp();
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						- Double.parseDouble((String) rarg));
+				break;
+			case 11:
+				jj_consume_token(11);
+				rarg = primaryExp();
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						* Double.parseDouble((String) rarg));
+				break;
+				
+			case 12:
+				jj_consume_token(12);
+				rarg = primaryExp();
+				larg = String.valueOf(Double.parseDouble((String) larg)
+						/ Double.parseDouble((String) rarg));
+				break;	
+				
+				
+			case 13:
+				
+				jj_consume_token(13);
+				obj = primitive();
+				{
+					if (true)
+						return obj;
+				}
+			
+			default:
+				jj_la1[3] = jj_gen;
+				jj_consume_token(-1);
+				throw new ParseException();
+			}
+		}
+		{
+			if (true)
+				return larg;
+		}
+		throw new Error("Missing return statement in function");
+	}
 
+	
 	// expression -> simpleExp | listExp
 	// -------------------------------------------------------
 	final public Object expression() throws ParseException {
@@ -101,6 +171,7 @@ public class Parser implements ParserConstants {
 				return obj;
 		}
 		throw new Error("Missing return statement in function");
+		
 	}
 
 	// addExp -> multExp (("+"|"-") multExp)*
@@ -188,7 +259,7 @@ public class Parser implements ParserConstants {
 		throw new Error("Missing return statement in function");
 	}
 
-	// primaryExp -> primitive | NUMBER | "(" simpleExp ")"
+	// primaryExp -> primitive | NUMBER | "(" simpleExp ")" ":"
 	// ---------------------------------------
 	final public Object primaryExp() throws ParseException {
 		Token t;
@@ -213,6 +284,15 @@ public class Parser implements ParserConstants {
 			jj_consume_token(5);
 			obj = simpleExp();
 			jj_consume_token(6);
+			{
+				if (true)
+					return obj;
+			}
+			break;
+		case 13:
+		
+			jj_consume_token(13);
+			obj = primitive();
 			{
 				if (true)
 					return obj;

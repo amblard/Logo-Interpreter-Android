@@ -30,7 +30,7 @@ public class Interpreter {
 	private Turtle turtle;
 	public double returnValue;
 	public final String REPEAT_COMMAND = "REPEAT";
-	private List<Variable> Variables;
+	public List<Variable> Variables;
 	private Variable variable;
 
 	
@@ -108,7 +108,7 @@ public class Interpreter {
 					prim.execute(this, parser);
 
 			} catch (ParseException e) {
-				Log.e("ERROR PARSING", e.getMessage());
+		
 				e.printStackTrace();
 			}
 		}
@@ -125,6 +125,10 @@ public class Interpreter {
 		variable.name=nom;
 		variable.value=valeur;
 		Variables.add(variable);
+		for (Variable var : Variables) {
+			System.out.println("le nom="+var.name);
+			System.out.println("le nom="+var.value);
+		}
 		
 	}
 	
