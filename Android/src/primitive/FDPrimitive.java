@@ -22,26 +22,20 @@ public class FDPrimitive implements Primitive {
 	}
 	
 	@Override
-	public void execute(Interpreter interp, Parser parser) {
+	public void execute(Interpreter interp, Parser parser) {		
 		
-		
-		
-		
-	try {
+		try {
 			// recupere le nom qui peut etre une valeur
 			value=(String) parser.generalExp();
-			System.out.println("la variable="+value);
 			  pattern = Pattern.compile("[a-zA-Z]");
 			  matcher = pattern.matcher(value);  
 			  
 			  Boolean match=false;
 			  while(matcher.find()) {
 				  match=true;
-		            System.out.println("Trouvé !");
-		            System.out.println(matcher);
 		        }
 			 
-			// si c'est des nombre  
+			// si c'est des nombres  
 			if(match==false){
 
 				interp.returnValue = Double.parseDouble(value); //test
