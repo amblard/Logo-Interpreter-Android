@@ -1,6 +1,5 @@
 package primitive;
 
-import parser.ParseException;
 import parser.Parser;
 
 import com.example.parser.Interpreter;

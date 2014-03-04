@@ -22,7 +22,6 @@ import primitive.PrimitiveDictionnary;
 import primitive.REPEATPrimitive;
 import primitive.RTPrimitive;
 import primitive.TOPrimitive;
-import android.util.Log;
 
 public class Interpreter {
 

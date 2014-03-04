@@ -1,0 +1,200 @@
+/**
+* Projet d'interpréteur logo
+*
+* Auteurs :
+* Hei-Hong TRAING
+* Mickaël GONCALVES
+*
+* Classe 32
+* Année 2012-2013
+*/
+options
+{
+  STATIC = false;
+}
+
+PARSER_BEGIN(Parser)
+package grammar;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.StringReader;
+
+public class Parser
+{}
+
+PARSER_END(Parser)
+
+// caractere ne generant pas de token		-------------------------------------------------------
+SKIP :
+{
+  " "
+| "\r"
+| "\t"
+| "\n"
+}
+
+// identifiants		-------------------------------------------------------------------------------
+TOKEN :
+{
+  "("
+| ")"
+| "["
+| "]"
+| "+"
+| "-"
+| "*"
+| "/"
+| ":"
+| < ID : (< LETTER >)+ > // primitive
+| < #LETTER : [ "a"-"z", "A"-"Z" ] >
+| < NUMBER : ([ "0"-"9" ])+ >
+}
+
+// primitive logo (une chaine de caractère composé de lettre uniquement)		-------------------
+Object primitive() :
+{
+  Token prim;
+}
+{
+  prim = < ID >
+  {
+    return (Object) prim.image;
+  }
+}
+
+// expression -> simpleExp | listExp		-------------------------------------------------------
+Object expression() :
+{
+  List < Object > list = null;
+  Object simple = null;
+}
+{
+  simple = simpleExp()
+  {
+    return simple;
+  }
+| list = listExp()
+  {
+    return list;
+  }
+| < EOF >
+  {
+    return null;
+  }
+}
+
+// listExp -> "[" (expression)* "]"		-----------------------------------------------------------
+List < Object > listExp() :
+{
+  @ SuppressWarnings(
+  {
+    "rawtypes"
+  }
+  ) List < Object > instrList = new ArrayList < Object > ();
+  Object obj;
+}
+{
+  "["
+  (
+    obj = expression()
+    {
+      instrList.add(obj);
+    }
+  )*
+  "]"
+  {
+    return instrList;
+  }
+}
+
+// simpleExp -> addExp		-----------------------------------------------------------------------
+Object simpleExp() :
+{
+  Object obj = "";
+}
+{
+  obj = addExp()
+  {
+    return obj;
+  }
+}
+
+// addExp -> multExp (("+"|"-") multExp)*		-----------------------------------------------------------
+Object addExp() :
+{
+  Object larg = null;
+  Object rarg;
+}
+{
+  larg = multExp()
+  (
+    "+" rarg = multExp()
+    {
+      larg = String.valueOf(Integer.parseInt((String) larg) + Integer.parseInt((String) rarg));
+    }
+  | "-" rarg = multExp()
+    {
+      larg = String.valueOf(Integer.parseInt((String) larg) - Integer.parseInt((String) rarg));
+    }
+  )*
+  {
+    return larg;
+  }
+}
+
+// multExp -> primaryExp (("*" | "/") primaryExp)*		-------------------------------------------
+Object multExp() :
+{
+  Object larg;
+  Object rarg;
+}
+{
+  larg = primaryExp()
+  (
+    "*" rarg = primaryExp()
+    {
+      larg = String.valueOf(Integer.parseInt((String) larg) * Integer.parseInt((String) rarg));
+    }
+  | "/" rarg = primaryExp()
+    {
+      larg = String.valueOf(Integer.parseInt((String) larg) / Integer.parseInt((String) rarg));
+    }
+  )*
+  {
+    return larg;
+  }
+}
+
+// primaryExp -> primitive | NUMBER | "(" simpleExp ")"		---------------------------------------
+Object primaryExp() :
+{
+  Token t;
+  Object obj;
+}
+{
+  obj = primitive()
+  {
+    return obj;
+  }
+| t = < NUMBER >
+  {
+    obj = t.image;
+    return obj;
+  }
+| "(" obj = simpleExp() ")"
+  {
+    return obj;
+  }
+}
+
+// variable -> ":"primitive
+Object variable() :
+{
+  Object obj;
+}
+{
+  ":" obj = primitive()
+  {
+    return obj;
+  }
+}
