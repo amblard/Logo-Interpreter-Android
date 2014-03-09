@@ -1,52 +1,25 @@
 package primitive;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import parser.ParseException;
 import parser.Parser;
 
 import com.example.parser.Interpreter;
-import com.example.parser.Variable;
 
 public class BKPrimitive implements Primitive {
-	String value = null;
-	private static Pattern pattern;
-	private static Matcher matcher;
+
 	@Override
 	public void execute(Interpreter interp, Parser parser) {
-		
+		String value = null;
 		try {
-			// recupere le nom qui peut etre une valeur
-			value=(String) parser.generalExp();
-			pattern = Pattern.compile("[a-zA-Z]");
-			matcher = pattern.matcher(value);  
-			Boolean match=false;
-			  while(matcher.find()) {
-				  match=true;
-		        }
-			// si c'est des nombres  
-				if(match==false){
-
-					interp.returnValue = Double.parseDouble(value);
-					
-					interp.getTurtle().backward(Double.parseDouble(value));
-					
-				}
-				else{
-					
-					for (Variable var : interp.Variables) {
-						if(value.compareTo(var.name)==0){
-							
-							interp.getTurtle().backward(var.value);
-						}
-					}
-										
-				}
+			value = (String) parser.simpleExp();
+			interp.returnValue = Double.parseDouble(value);
 			
+			interp.getTurtle().backward(Double.parseDouble(value));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+
+		System.out.println("BK : la tortue recule de " + value);
 
 	}
 

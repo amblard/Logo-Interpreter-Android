@@ -7,9 +7,13 @@ package com.example.parser;
 import primitive.NoSuchPrimitiveException;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -34,7 +38,7 @@ public class DrawCanvas extends Activity {
 
 			
 			renderView.setBackgroundColor(Color.WHITE);
-		
+			
 			setContentView(renderView);
 			
 

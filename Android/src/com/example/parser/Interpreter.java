@@ -1,8 +1,6 @@
 package com.example.parser;
 
 import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
 
 import parser.ParseException;
 import parser.Parser;
@@ -13,7 +11,6 @@ import primitive.CustomPrimitive;
 import primitive.FDPrimitive;
 import primitive.HOMEPrimitive;
 import primitive.LTPrimitive;
-import primitive.MAKEPrimitive;
 import primitive.NoSuchPrimitiveException;
 import primitive.PDPrimitive;
 import primitive.PUPrimitive;
@@ -22,6 +19,7 @@ import primitive.PrimitiveDictionnary;
 import primitive.REPEATPrimitive;
 import primitive.RTPrimitive;
 import primitive.TOPrimitive;
+import android.util.Log;
 
 public class Interpreter {
 
@@ -29,8 +27,6 @@ public class Interpreter {
 	private Turtle turtle;
 	public double returnValue;
 	public final String REPEAT_COMMAND = "REPEAT";
-	public List<Variable> Variables;
-	private Variable variable;
 
 	
 	
@@ -39,11 +35,8 @@ public class Interpreter {
 		turtle = new Turtle(ui);
 
 		primitives = new PrimitiveDictionnary();
-		
-		initializePrimitives();
-		
-		Variables = new ArrayList<Variable>();
 
+		initializePrimitives();
 	}
 
 	public Turtle getTurtle() {
@@ -70,7 +63,6 @@ public class Interpreter {
 		primitives.put("RT", new RTPrimitive());
 		primitives.put("RIGHT", new RTPrimitive());
 		primitives.put("TO", new TOPrimitive());
-		primitives.put("MAKE", new MAKEPrimitive());
 	}
 
 	public void execute(String text) throws NoSuchPrimitiveException {
@@ -107,7 +99,7 @@ public class Interpreter {
 					prim.execute(this, parser);
 
 			} catch (ParseException e) {
-		
+				Log.e("ERROR PARSING", e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -116,20 +108,5 @@ public class Interpreter {
 	public void createCustomPrimitive(String name, String list) {
 		primitives.put(name, new CustomPrimitive(list));
 	}
-	
-	
-	public void ListVariable(String nom, Double valeur){
-		
-		variable=new Variable();
-		variable.name=nom;
-		variable.value=valeur;
-		Variables.add(variable);
-		for (Variable var : Variables) {
-			System.out.println("le nom="+var.name);
-			System.out.println("le nom="+var.value);
-		}
-		
-	}
-	
 
 }

@@ -14,7 +14,7 @@ options
 }
 
 PARSER_BEGIN(Parser)
-package grammar;
+package parser;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.StringReader;
