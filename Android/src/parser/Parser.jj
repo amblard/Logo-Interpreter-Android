@@ -1,12 +1,11 @@
 /**
-* Projet d'interpréteur logo
+* Projet d'interpreteur logo
 *
 * Auteurs :
 * Hei-Hong TRAING
-* Mickaël GONCALVES
-*
-* Classe 32
-* Année 2012-2013
+* Mickael GONCALVES
+* Vincent GUILLEBAUD
+* 
 */
 options
 {
@@ -50,7 +49,7 @@ TOKEN :
 | < NUMBER : ([ "0"-"9" ])+ >
 }
 
-// primitive logo (une chaine de caractère composé de lettre uniquement)		-------------------
+// primitive logo (une chaine de caractere compose de lettre uniquement)		-------------------
 Object primitive() :
 {
   Token prim;
@@ -110,7 +109,7 @@ List < Object > listExp() :
 // simpleExp -> addExp		-----------------------------------------------------------------------
 Object simpleExp() :
 {
-  Object obj = "";
+  Object obj = null;
 }
 {
   obj = addExp()
@@ -122,7 +121,7 @@ Object simpleExp() :
 // addExp -> multExp (("+"|"-") multExp)*		-----------------------------------------------------------
 Object addExp() :
 {
-  Object larg = null;
+  Object larg;
   Object rarg;
 }
 {
@@ -130,14 +129,17 @@ Object addExp() :
   (
     "+" rarg = multExp()
     {
-      larg = String.valueOf(Integer.parseInt((String) larg) + Integer.parseInt((String) rarg));
+      larg = new Double(((Double)larg).doubleValue() + ((Double)rarg).doubleValue());
+      
     }
   | "-" rarg = multExp()
     {
-      larg = String.valueOf(Integer.parseInt((String) larg) - Integer.parseInt((String) rarg));
+      larg = new Double(((Double)larg).doubleValue() - ((Double)rarg).doubleValue());
+      
     }
   )*
   {
+    System.out.println("Value of value : "+larg.toString());
     return larg;
   }
 }
@@ -153,11 +155,11 @@ Object multExp() :
   (
     "*" rarg = primaryExp()
     {
-      larg = String.valueOf(Integer.parseInt((String) larg) * Integer.parseInt((String) rarg));
+       larg = new Double(((Double)larg).doubleValue() * ((Double)rarg).doubleValue());
     }
   | "/" rarg = primaryExp()
     {
-      larg = String.valueOf(Integer.parseInt((String) larg) / Integer.parseInt((String) rarg));
+       larg = new Double(((Double)larg).doubleValue() / ((Double)rarg).doubleValue());
     }
   )*
   {
@@ -179,7 +181,8 @@ Object primaryExp() :
 | t = < NUMBER >
   {
     obj = t.image;
-    return obj;
+
+    return new Double(Double.parseDouble(t.image));
   }
 | "(" obj = simpleExp() ")"
   {

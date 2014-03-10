@@ -7,11 +7,11 @@ import android.util.Log;
 import com.example.parser.Interpreter;
 
 public class FDPrimitive implements Primitive {
-	String value = null;
+	Object value = null;
 	// private Turtle turtle;
 
 	public double getValue() {
-		return Double.parseDouble(value);
+		return (Double) value;
 	}
 	
 	@Override
@@ -19,10 +19,16 @@ public class FDPrimitive implements Primitive {
 		
 
 		try {
-			value = (String) parser.simpleExp();
-			interp.returnValue = Double.parseDouble(value);
+			value =  parser.simpleExp();
+			System.out.println("CLASS value "+value.getClass());
 
-			interp.getTurtle().forward(Double.parseDouble(value));
+			if(value instanceof Double){				
+				interp.returnValue = (Double) value;
+				interp.getTurtle().forward((Double) value);
+			}
+			else {
+				System.out.println("FD must have a numeric (double) argument");
+			}
 
 		} catch (ParseException e) {
 			e.printStackTrace();

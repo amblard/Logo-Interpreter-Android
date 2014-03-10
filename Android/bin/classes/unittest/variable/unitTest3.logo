@@ -1,0 +1,2 @@
+MAKE var 100
+REPEAT 4[FD var]

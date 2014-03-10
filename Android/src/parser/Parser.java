@@ -6,7 +6,7 @@ import java.io.StringReader;
 
 public class Parser implements ParserConstants {
 
-// primitive logo (une chaine de caractère composé de lettre uniquement)		-------------------
+// primitive logo (une chaine de caractere compose de lettre uniquement)		-------------------
   final public Object primitive() throws ParseException {
   Token prim;
     prim = jj_consume_token(ID);
@@ -74,7 +74,7 @@ public class Parser implements ParserConstants {
 
 // simpleExp -> addExp		-----------------------------------------------------------------------
   final public Object simpleExp() throws ParseException {
-  Object obj = "";
+  Object obj = null;
     obj = addExp();
     {if (true) return obj;}
     throw new Error("Missing return statement in function");
@@ -82,7 +82,7 @@ public class Parser implements ParserConstants {
 
 // addExp -> multExp (("+"|"-") multExp)*		-----------------------------------------------------------
   final public Object addExp() throws ParseException {
-  Object larg = null;
+  Object larg;
   Object rarg;
     larg = multExp();
     label_2:
@@ -100,12 +100,12 @@ public class Parser implements ParserConstants {
       case 9:
         jj_consume_token(9);
         rarg = multExp();
-      larg = String.valueOf(Integer.parseInt((String) larg) + Integer.parseInt((String) rarg));
+      larg = new Double(((Double)larg).doubleValue() + ((Double)rarg).doubleValue());
         break;
       case 10:
         jj_consume_token(10);
         rarg = multExp();
-      larg = String.valueOf(Integer.parseInt((String) larg) - Integer.parseInt((String) rarg));
+      larg = new Double(((Double)larg).doubleValue() - ((Double)rarg).doubleValue());
         break;
       default:
         jj_la1[3] = jj_gen;
@@ -113,6 +113,7 @@ public class Parser implements ParserConstants {
         throw new ParseException();
       }
     }
+    System.out.println("Value of value : "+larg.toString());
     {if (true) return larg;}
     throw new Error("Missing return statement in function");
   }
@@ -137,12 +138,12 @@ public class Parser implements ParserConstants {
       case 11:
         jj_consume_token(11);
         rarg = primaryExp();
-      larg = String.valueOf(Integer.parseInt((String) larg) * Integer.parseInt((String) rarg));
+       larg = new Double(((Double)larg).doubleValue() * ((Double)rarg).doubleValue());
         break;
       case 12:
         jj_consume_token(12);
         rarg = primaryExp();
-      larg = String.valueOf(Integer.parseInt((String) larg) / Integer.parseInt((String) rarg));
+       larg = new Double(((Double)larg).doubleValue() / ((Double)rarg).doubleValue());
         break;
       default:
         jj_la1[5] = jj_gen;
@@ -166,7 +167,8 @@ public class Parser implements ParserConstants {
     case NUMBER:
       t = jj_consume_token(NUMBER);
     obj = t.image;
-    {if (true) return obj;}
+
+    {if (true) return new Double(Double.parseDouble(t.image));}
       break;
     case 5:
       jj_consume_token(5);
