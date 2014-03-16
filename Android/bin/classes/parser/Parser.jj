@@ -46,7 +46,8 @@ TOKEN :
 | ":"
 | < ID : (< LETTER >)+ > // primitive
 | < #LETTER : [ "a"-"z", "A"-"Z" ] >
-| < NUMBER : ([ "0"-"9" ])+ >
+| < NUMBER :  < DIGITS > | < DIGITS > "." < DIGITS > >
+| < DIGITS :  ([ "0"-"9" ])+ >
 }
 
 // primitive logo (une chaine de caractere compose de lettre uniquement)		-------------------
@@ -130,7 +131,7 @@ Object addExp() :
     "+" rarg = multExp()
     {
       larg = new Double(((Double)larg).doubleValue() + ((Double)rarg).doubleValue());
-      
+       
     }
   | "-" rarg = multExp()
     {
@@ -139,7 +140,7 @@ Object addExp() :
     }
   )*
   {
-    System.out.println("Value of value : "+larg.toString());
+    //System.out.println("Value of value : "+larg.toString());
     return larg;
   }
 }

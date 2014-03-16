@@ -4,14 +4,15 @@ import java.io.StringReader;
 
 import parser.ParseException;
 import parser.Parser;
+import parser.ParserConstants;
 import primitive.BKPrimitive;
 import primitive.CLEANPrimitive;
 import primitive.CSPrimitive;
 import primitive.CustomPrimitive;
 import primitive.FDPrimitive;
 import primitive.HOMEPrimitive;
-import primitive.LTPrimitive;
 import primitive.NoSuchPrimitiveException;
+import primitive.LTPrimitive;
 import primitive.PDPrimitive;
 import primitive.PUPrimitive;
 import primitive.Primitive;
@@ -70,7 +71,7 @@ public class Interpreter {
 
 		// lecture du coe utilisateur
 		Parser parser = new Parser(new StringReader(text));
-		while (parser.getToken(1).kind != Parser.EOF) {
+		while (parser.getToken(1).kind != ParserConstants.EOF) {
 		
 			try {
 				String primitiveId = (String) parser.primitive();

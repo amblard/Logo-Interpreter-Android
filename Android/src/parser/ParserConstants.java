@@ -16,6 +16,8 @@ public interface ParserConstants {
   int LETTER = 15;
   /** RegularExpression Id. */
   int NUMBER = 16;
+  /** RegularExpression Id. */
+  int DIGITS = 17;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -39,6 +41,7 @@ public interface ParserConstants {
     "<ID>",
     "<LETTER>",
     "<NUMBER>",
+    "<DIGITS>",
   };
 
 }

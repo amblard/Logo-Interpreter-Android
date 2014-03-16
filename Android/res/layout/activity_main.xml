@@ -24,28 +24,28 @@
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="43dp"
         android:ems="10"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="Parser" />
+        android:layout_alignBottom="@+id/linearLayout1"
+        android:minWidth="100dp"
+        android:text="Lancer" />
 
-    <TextView
-        android:id="@+id/textView1"
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:text="Résultat parsing"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_above="@+id/editText1"
+        android:layout_alignParentRight="true"
+        android:minWidth="100dp"
+        android:text="Aide" />
 
 </RelativeLayout>

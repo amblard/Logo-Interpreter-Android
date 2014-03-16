@@ -2,8 +2,6 @@ package primitive;
 
 import parser.Parser;
 
-import android.util.Log;
-
 import com.example.parser.Interpreter;
 
 public class CustomPrimitive implements Primitive {

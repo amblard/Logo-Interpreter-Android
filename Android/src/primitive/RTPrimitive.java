@@ -6,20 +6,29 @@ import parser.Parser;
 import com.example.parser.Interpreter;
 
 public class RTPrimitive implements Primitive {
+	Object value = null;
 
 	@Override
-	public void execute(Interpreter interp, Parser parser) {
-		String value = null;
-		try {
-			value = (String) parser.simpleExp();
-			interp.returnValue = Double.parseDouble(value);
-			
-			interp.getTurtle().TurnRIGHT(Double.parseDouble(value));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
+	public void execute(Interpreter interp, Parser parser) throws NoSuchPrimitiveException {
 
-		System.out.println("RT : la tortue tourne a droite de " + value);
+		try {
+			value =  parser.simpleExp();
+			if(null == value)
+				throw new NoSuchPrimitiveException("RT must have a numeric (double) argument");
+
+
+			if(value instanceof Double){				
+				interp.returnValue = (Double) value;
+				interp.getTurtle().TurnRIGHT((Double) value);
+			}
+			else {
+				throw new NoSuchPrimitiveException("RT must have a numeric (double) argument.");
+			}
+
+		} catch (ParseException e) {
+			throw new NoSuchPrimitiveException("Invalid argument for RT.");
+		}
+		
 
 	}
 

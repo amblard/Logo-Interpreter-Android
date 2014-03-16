@@ -1,6 +1,5 @@
 package com.example.parser;
 
-import android.graphics.Color;
 import android.util.Log;
 
 public class Turtle {
@@ -64,7 +63,7 @@ public class Turtle {
 
 	public void turn(double angle, double sign) {
 		
-		this.angle = (this.angle + angle) * sign;
+		this.angle = (this.angle + sign * angle);
 		
 	}
 

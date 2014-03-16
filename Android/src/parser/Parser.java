@@ -2,7 +2,6 @@
 package parser;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.StringReader;
 
 public class Parser implements ParserConstants {
 
@@ -10,7 +9,7 @@ public class Parser implements ParserConstants {
   final public Object primitive() throws ParseException {
   Token prim;
     prim = jj_consume_token(ID);
-    {if (true) return (Object) prim.image;}
+    {if (true) return prim.image;}
     throw new Error("Missing return statement in function");
   }
 
@@ -113,7 +112,7 @@ public class Parser implements ParserConstants {
         throw new ParseException();
       }
     }
-    System.out.println("Value of value : "+larg.toString());
+    //System.out.println("Value of value : "+larg.toString());
     {if (true) return larg;}
     throw new Error("Missing return statement in function");
   }
@@ -325,7 +324,7 @@ public class Parser implements ParserConstants {
   /** Generate ParseException. */
   public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[17];
+    boolean[] la1tokens = new boolean[18];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -339,7 +338,7 @@ public class Parser implements ParserConstants {
         }
       }
     }
-    for (int i = 0; i < 17; i++) {
+    for (int i = 0; i < 18; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

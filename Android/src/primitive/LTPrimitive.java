@@ -6,21 +6,31 @@ import parser.Parser;
 import com.example.parser.Interpreter;
 
 public class LTPrimitive implements Primitive {
-
+	Object value = null;
+	
 	@Override
-	public void execute(Interpreter interp, Parser parser) {
-		String value = null;
+	public void execute(Interpreter interp, Parser parser) throws NoSuchPrimitiveException {
+
 		try {
-			value = (String) parser.simpleExp();
-			interp.returnValue = Double.parseDouble(value);
-			
-			interp.getTurtle().TurnLEFT(Double.parseDouble(value));
+			value =  parser.simpleExp();
+			if(null == value)
+				throw new NoSuchPrimitiveException("LT must have a numeric (double) argument");
+
+
+			if(value instanceof Double){				
+				interp.returnValue = (Double) value;
+				interp.getTurtle().TurnLEFT((Double) value);
+			}
+			else {
+				throw new NoSuchPrimitiveException("LT must have a numeric (double) argument");
+				
+			}
+
 		} catch (ParseException e) {
-			e.printStackTrace();
+			throw new NoSuchPrimitiveException("Invalid argument for LT");
 		}
-
-		System.out.println("LT : la tortue tourne a gauche de " + value);
-
+		
+		
 	}
 
 }
