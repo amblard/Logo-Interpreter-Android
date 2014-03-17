@@ -106,9 +106,11 @@ public class MainActivity extends Activity implements OnClickListener, OnGesture
 		    	 userinput.setSelection(debut.length()+cmdToAdd.length());
 			       //Toast.makeText(this, "RT", Toast.LENGTH_LONG).show();
 			 }
-		     // ATTENTION le fd ne peut pas être reconnu car un "gesture" doit être composé d'au moins "deux traits"
+		     // dessin d'un FD (trait horizontale)
 		     else if ("fd".equalsIgnoreCase(result)) {
-			       Toast.makeText(this, "FD", Toast.LENGTH_LONG).show();
+		    	 cmdToAdd = "\nFD ";
+		    	 userinput.setText(debut+ cmdToAdd + fin);
+		    	 userinput.setSelection(debut.length()+cmdToAdd.length());
 			 }
 		     else {
 		    	 Toast.makeText(this, "Commande non reconnue", Toast.LENGTH_LONG).show();
