@@ -33,7 +33,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		boutonParser.setOnClickListener(this);
 
 		userinput = (EditText) findViewById(R.id.editText1);
-		userinput.setMaxHeight((int) (hauteurEcran/1.5));
+		userinput.setMaxHeight((int) (hauteurEcran/2.9));
 		userinput.setWidth(largeurEcran);
 		userinput.setMaxWidth(largeurEcran);
 		

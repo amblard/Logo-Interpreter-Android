@@ -44,7 +44,7 @@ public class DrawCanvas extends Activity {
 			TextView txview = new TextView(this.getBaseContext());
 			txview.setTextColor(Color.rgb(200,0,0));
 			txview.setTextSize(25);
-			txview.setText("Erreur : La primitive ["+e.getMessage()+ "] n'est pas valide.");
+			txview.setText("Error : "+e.getMessage());
 			setContentView(txview);
 			Log.d("PARSING", "Error : "+e.getMessage()+ "is not a valid commande");
 			
