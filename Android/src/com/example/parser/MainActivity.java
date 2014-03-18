@@ -94,21 +94,21 @@ public class MainActivity extends Activity implements OnClickListener, OnGesture
 		     } 
 		     // dessin d'un LT
 		     else if ("lt".equalsIgnoreCase(result)) {
-		    	 cmdToAdd = "\nLT ";
+		    	 cmdToAdd = "\nLEFT ";
 		    	 userinput.setText(debut+ cmdToAdd + fin);
 		    	 userinput.setSelection(debut.length()+cmdToAdd.length());
 		      // Toast.makeText(this, "LT", Toast.LENGTH_LONG).show();
 		     }
 		     // dessin d'un RT
 		     else if ("rt".equalsIgnoreCase(result)) {
-		    	 cmdToAdd = "\nRT ";
+		    	 cmdToAdd = "\nRIGHT ";
 		    	 userinput.setText(debut+ cmdToAdd + fin);
 		    	 userinput.setSelection(debut.length()+cmdToAdd.length());
 			       //Toast.makeText(this, "RT", Toast.LENGTH_LONG).show();
 			 }
 		     // dessin d'un FD (trait horizontale)
 		     else if ("fd".equalsIgnoreCase(result)) {
-		    	 cmdToAdd = "\nFD ";
+		    	 cmdToAdd = "\nFORWARD ";
 		    	 userinput.setText(debut+ cmdToAdd + fin);
 		    	 userinput.setSelection(debut.length()+cmdToAdd.length());
 			 }
