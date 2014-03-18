@@ -1,3 +1,0 @@
-to carre repeat 4[FD 100 RT 90] end
-to troiscarre repeat 3[carre FD 100]end 
-troiscarre
