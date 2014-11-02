@@ -3,4 +3,8 @@ PAIR
 
 Projet d'interpréteur Logo sur Android
 
-Contact : vincent.guillebaud@gmail.com
+Projet réaliser par deux étudiants de L'ESIEA
+
+Contact : Vincent Guillebaud  vincent.guillebaud@gmail.com
+          Heihong Traing
+
